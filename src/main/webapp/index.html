@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Store - New Arrivals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <h2>Shoe Factory</h2>
+        </div>
+        <div class="menu">
+            <a href="">Home</a>
+            <a href="#product">Shop</a>
+            <a href="#contact">Contact</a>
+            <a href="LogReg.html">
+              Login
+            </a>
+            
+        </div>
+    </div>
+    
+
+    <div class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h1>Exclusive Collection</h1>
+                    <p>Discover the premium range of our exclusive shoes!</p>
+                    <a href="LogReg.html"><button>Shop Now</button></a>
+                </div>
+                <div class="hero-image">
+                    <img src="images/collection.jpg" alt="Exclusive Collection Image">
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h1>New Arrivals</h1>
+                    <p>Get flat 50% off on all our latest shoe designs!</p>
+                    <a href="LogReg.html"><button>Shop Now</button></a>
+                </div>
+                <div class="hero-image">
+                    <img src="images/newarrivals.jpg" alt="New Arrivals Image">
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h1>Best Sellers</h1>
+                    <p>Explore our most popular shoes loved by customers!</p>
+                    <a href="LogReg.html"><button>Shop Now</button></a>
+                </div>
+                <div class="hero-image">
+                    <img src="images/seller.jpg" alt="Best Sellers Image">
+                </div>
+            </div>
+        </div>
+        <div class="hero-buttons">
+            <button onclick="prevSlide()">&#10094;</button>
+            <button onclick="nextSlide()">&#10095;</button>
+        </div>
+    </div>
+    
+    
+    
+    <div class="product-section" id="product">
+        <h2>Explore Our Products</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/shoe1.jpg" alt="Shoe 1">
+                <h3>PUMA Questblitz Mid Men's Running Shoes</h3>
+                <p>Price: Rs.7500</p>
+                <p>Rating: ⭐⭐⭐⭐☆</p>
+                <a href="LogReg.html"><button class="buy-now">Buy Now</button></a>
+            </div>
+            <div class="product">
+                <img src="images/shoe2.jpg" alt="Shoe 2">
+                <h3>NikeCourt Lite 4
+                    Running Shoes with smooth Insole
+                </h3>
+                <p>Price: Rs.7500</p>
+                <p>Rating: ⭐⭐⭐⭐⭐</p>
+                <a href="LogReg.html"><button class="buy-now">Buy Now</button></a>
+            </div>
+            <div class="product">
+                <img src="images/shoe3.jpg" alt="Shoe 3">
+                <h3>Future Rider Play On Unisex Sneakers</h3>
+                <p>Price: Rs.5399</p>
+                <p>Rating: ⭐⭐⭐⭐☆</p>
+                <a href="LogReg.html"><button class="buy-now">Buy Now</button></a>
+            </div>
+            <div class="product">
+                <img src="images/shoe4.jpg" alt="Shoe 4">
+                <h3>Men Grey Metaflash Running Shoes</h3>
+                <p>Price: Rs.7500</p>
+                <p>Rating: ⭐⭐⭐⭐⭐</p>
+                <a href="LogReg.html"><button class="buy-now">Buy Now</button></a>
+            </div>
+            <div class="product">
+                <img src="images/shoe5.jpg" alt="Shoe 5">
+                <h3>U-17 Unisex Grey & Orange Woven Design Sneakers</h3>
+                <p>Price: Rs.7500</p>
+                <p>Rating: ⭐⭐⭐⭐☆</p>
+                <a href="LogReg.html"><button class="buy-now">Buy Now</button></a>
+            </div>
+            <div class="product">
+                <img src="images/shoe6.jpg" alt="Shoe 6">
+                <h3>PUMA Swift Pulse Men's Training Shoes</h3>
+                <p>Price: Rs.7500</p>
+                <p>Rating: ⭐⭐⭐⭐⭐</p>
+                <a href="LogReg.html"><button class="buy-now">Buy Now</button></a>
+            </div>
+            <div class="product">
+                <img src="images/shoe7.jpg" alt="Shoe 7">
+                <h3>
+                    Women's LD-1000
+                    Summit White and Black</h3>
+                <p>Price: Rs.7500</p>
+                <p>Rating: ⭐⭐⭐⭐☆</p>
+                <a href="LogReg.html"><button class="buy-now">Buy Now</button></a>
+            </div>
+            <div class="product">
+                <img src="images/shoe8.jpg" alt="Shoe 8">
+                <h3>White PROPULSION Running Shoes</h3>
+                <p>Price: Rs.7500</p>
+                <p>Rating: ⭐⭐⭐⭐⭐</p>
+                <a href="LogReg.html"><button class="buy-now">Buy Now</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer" id="contact">
+        <div class="footer-content">
+            <div class="contactdetails">
+               <p>Email : contactshoesfactory@gmail.com</p>
+               <p>TelePhone : 98745632178</p>
+            </div>
+            <div class="footer-legal">
+                <p>&copy; 2025 Shoe Store. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.hero-slider');
+            const totalSlides = document.querySelectorAll('.hero-slide').length;
+
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+
+            const offset = -currentSlide * 100;
+            slides.style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Initialize the first slide
+        showSlide(0);
+    </script>
+</body>
+</html>
+
